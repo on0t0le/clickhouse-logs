@@ -40,3 +40,9 @@ docker build -t ha ./haproxy
 docker run -d -p 8083:80 ha
 ```
 Use this [github repo](https://github.com/shuLhan/haminer) to configure your custom golang haproxy logreader.
+
+To build and run parser:
+```sh
+docker build -t parser ./logparser
+docker run -d --name logparser parser
+```
