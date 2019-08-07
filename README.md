@@ -22,3 +22,21 @@ CREATE TABLE metrics.nginx (
     HttpUserAgent String
 ) ENGINE = MergeTree(Date, (Status, Date), 8192)
 ```
+
+InfluxDB
+```sh
+docker run --name=influxdb -d -p 8086:8086 influxdb
+```
+Client for InfluxDB
+```sh
+docker run --rm --link=influxdb -it influxdb influx -host influxdb
+```
+Web Chronograf for InfluxDB
+```sh
+docker run -p 8888:8888 chronograf --influxdb-url=http://172.17.0.2:8086
+```
+```sh
+docker build -t ha ./haproxy
+docker run -d -p 8083:80 ha
+```
+Use this [github repo](https://github.com/shuLhan/haminer) to configure your custom golang haproxy logreader.
