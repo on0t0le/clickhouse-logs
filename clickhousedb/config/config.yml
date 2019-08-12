@@ -1,13 +1,13 @@
 # Settings
 settings:
   interval: 5 # in seconds
-  log_path: logs/access.log # path to logfile
+  log_path: logs/host.access.log # path to logfile
 
 # ClickHouse credentials
 clickhouse:
  db: metrics
  table: nginx
- host: 172.17.0.2
+ host: 172.17.0.5
  port: 8123
  credentials:
   user: default
